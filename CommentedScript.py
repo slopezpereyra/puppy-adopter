@@ -1,5 +1,8 @@
 #! /usr/bin/python3
 
+# Commented Script - Unnecessary unless you didn't follow the raw, prettier script. Only the look_images function have 
+# some lines that wouldn't make any sense without a comment.
+
 import os, requests, bs4, random, shelve, shutil
 
 def create_folder(): # Creates the folder the files will be downloaded to (and printes a cute, unnecessary message!).
