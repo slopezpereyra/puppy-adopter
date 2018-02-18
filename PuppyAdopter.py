@@ -17,12 +17,12 @@ def download_image(url, request_response):
 
 def create_data_file():
 
-    if os.path.isfile('C:\\Users\\usuario\\Documents\\santi\\saves.dat') == False:
+    if os.path.isfile('home/santiago/Documentos/PuppyAdopter/saves.dat') == False:
         page_files = shelve.open('saves')
         page_files.close()
 
 def save_pages_in_data(saves_list):
-        if os.path.isfile('C:\\Users\\usuario\\Documents\\santi\\saves.dat') == True:
+        if os.path.isfile('home/santiago/Documentos/PuppyAdopter/saves.dat') == True:
             page_files = shelve.open('saves')
             page_files['saves'] = saves_list
             page_files.close()
