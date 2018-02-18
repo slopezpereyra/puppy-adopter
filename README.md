@@ -28,7 +28,7 @@ to this, apart from adding to the pages list a higher amount of values (web site
 
 # The os directory (I know this is so easy, I just don't have time now):
 
-This is a huge miss on the script. Since this was a program I wrote on a trip, I quited working on it once I returned to my normal life. I didn't got the chance or the time to solve this silly, yet unacceptable defect. The script lacks a function that gets and returns the current directory of the .py file, where would be convenient to tell the computer to create the data files into. On the contrary, my own personal directory is specified. Will work on it, should take me just some minutes (but I'm not wealthy on those right now...).
+This is a huge miss on the script. Since this was a program I wrote on a trip, I quited working on it once I returned to my normal life. I didn't got the chance or the time to solve this silly, yet unacceptable defect. The script lacks of a function that gets and returns the current directory of the .py file, where would be convenient to tell the computer to create the data files into. On the contrary, my own personal directory is specified. Will work on it, should take me just some minutes (but I'm not wealthy on those right now...).
 
 # --- What do I want to achieve with PuppyAdopter? ----
 
