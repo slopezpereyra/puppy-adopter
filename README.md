@@ -14,23 +14,23 @@ PuppyAdopter does things that I would like to prevent from happening in the futu
 
 # Downloading unwanted images:
 
-	PuppyAdopter counts how many web objects with the 'img' or 'src' tags exist in a web page and chooses randomly one to download. The problem is, of the hundred or fifty images that
-	web page holds, some are unwanted, such as calendars, logos, publicity, and so. Not puppies. You get the idea. I haven't figure out a filter that works completely propperly, though
-	have some things in mind and ran some tests. This is still unresolved.
+PuppyAdopter counts how many web objects with the 'img' or 'src' tags exist in a web page and chooses randomly one to download. The problem is, of the hundred or fifty images that
+web page holds, some are unwanted, such as calendars, logos, publicity, and so. Not puppies. You get the idea. I haven't figure out a filter that works completely propperly, though
+have some things in mind and ran some tests. This is still unresolved.
 
 # Ilegible data file:
 
-	This is a matter of ignorance from my part. PuppyAdopter produces a data file and stores in it, under the key "saves", a list value containing the image url's downloaded. Theoretically
-	this, that was done for the purpose of preventing downloading twice the same image, works, since if one prints the list as a debug test the values are okay, and the function that
-	saves the list has any issue. But, when the data file is opened (it is a .dat file) everything is ilegible, and I'd think my list should be there and not those strange characters.
-	This could be: a) the list is not saved propperly on the .dat file and instead crazy characters are holded for some reason; b) the list is stored propperly but the .dat file is not
-	legible because of its own format. So... is it that the format can't be read on Word or the NotePad or rather a fault on the program?
+This is a matter of ignorance from my part. PuppyAdopter produces a data file and stores in it, under the key "saves", a list value containing the image url's downloaded. Theoretically
+this, that was done for the purpose of preventing downloading twice the same image, works, since if one prints the list as a debug test the values are okay, and the function that
+saves the list has any issue. But, when the data file is opened (it is a .dat file) everything is ilegible, and I'd think my list should be there and not those strange characters.
+This could be: a) the list is not saved propperly on the .dat file and instead crazy characters are holded for some reason; b) the list is stored propperly but the .dat file is not
+legible because of its own format. So... is it that the format can't be read on Word or the NotePad or rather a fault on the program?
 
 # The pages list:
 
-	The fact that the program works with a given list of web sites is limiting. On the other hand, it would be quite a mess to have the program scrap the whole web looking for puppies, even
-	with the propper filters. It would be much slower and vulnerable to bugs and unwanted results (such as downloading things that aren't puppies). Is there a way to find a solution
-	to this, apart from adding to the pages list a higher amount of values (web sites)?
+The fact that the program works with a given list of web sites is limiting. On the other hand, it would be quite a mess to have the program scrap the whole web looking for puppies, even
+with the propper filters. It would be much slower and vulnerable to bugs and unwanted results (such as downloading things that aren't puppies). Is there a way to find a solution
+to this, apart from adding to the pages list a higher amount of values (web sites)?
 
 # --- What do I want to achieve with PuppyAdopter? ----
 
