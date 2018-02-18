@@ -21,12 +21,12 @@ def create_data_file(): #The "if os.path.isfile" etc. method isn't flawless: it 
 
 #This function creates a saves.dat file on the folder only if that file wasn't created before or existed already;
 
-    if os.path.isfile('C:\\Users\\usuario\\Documents\\santi\\saves.dat') == False:
+    if os.path.isfile('home/santiago/Documentos/PuppyAdopter/saves.dat') == False:
         page_files = shelve.open('saves')
         page_files.close()
 
 def save_pages_in_data(saves_list): #This function creates a key value "saves" holding the "saves_list" list, where the downloaded url will be stored, all in the saves.dat file.
-        if os.path.isfile('C:\\Users\\usuario\\Documents\\santi\\saves.dat') == True:
+        if os.path.isfile('home/santiago/Documentos/PuppyAdopter/saves.dat') == True:
             page_files = shelve.open('saves')
             page_files['saves'] = saves_list
             page_files.close()
