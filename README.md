@@ -32,6 +32,10 @@ The fact that the program works with a given list of web sites is limiting. On t
 with the propper filters. It would be much slower and vulnerable to bugs and unwanted results (such as downloading things that aren't puppies). Is there a way to find a solution
 to this, apart from adding to the pages list a higher amount of values (web sites)?
 
+# The os directory:
+
+This is a huge miss on the program. Since this was a program I wrote on a trip I quited working on it once I returned to my normal life. I didn't got the chance or the time to solve this silly, yet unacceptable miss. The script lacks a function that gets and returns that current directory of the .py file, which would be convenient to tell the computer where to create the data files. On the contrary, my own personal directory is specified. Will work on it, should take me just some minutes (but I'm not wealthy on those right now...).
+
 # --- What do I want to achieve with PuppyAdopter? ----
 
 Nothing. It's a crappy program. It is a simple excercise on web scrapping and downloading stuff that will on the process make me look cute on the eyes of my girlfriend (oh, the secret reasons of our endeavours!). I will subsequently use my PuppyAdopter experiencie to achieve more honourable goals (?).
