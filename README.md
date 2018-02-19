@@ -6,7 +6,7 @@ A program that downloads images of puppies and other baby animals.
 
 --- What is it? ---
 
-PuppyAdopter matters because of its form and not of its content. It is essentially a program that scraps a list of web pages and downloads one picture, randomly selected, of each. The fact that it downloads pictures is incidental; since it was made to work as a structure, it only provides me the skeleton to later on build more complex, interesting programs, that download more interesting -yet surely less cute- things than puppies and other baby animals.
+PuppyAdopter matters because of its form and not of its content. It is essentially a program that scraps a list of web pages and downloads one picture, randomly selected, of each. The fact that it downloads pictures is incidental; since it was made to work as a structure, it only provides me the skeleton to later on build more complex, interesting programs, that download better -yet surely less cute- things than puppies and other baby animals.
 
 # --- Where does it need to improve? --- 
 
