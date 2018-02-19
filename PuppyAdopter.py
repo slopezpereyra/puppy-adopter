@@ -1,8 +1,12 @@
 #! /usr/bin/python3
 
-#Please read the readme to understand what this is and what is expected from it.
-
 import os, requests, bs4, random, shelve, shutil
+
+def get_cwd(appended_value):
+    cwd = os.getcwd()
+    cwd = cwd + appended_value
+
+    return cwd
 
 def create_folder():
     print('Comprobando pelusitas y pulguitas...')
@@ -17,12 +21,12 @@ def download_image(url, request_response):
 
 def create_data_file():
 
-    if os.path.isfile('home/santiago/Documentos/PuppyAdopter/saves.dat') == False:
+    if os.path.isfile(get_cwd('/saves.dat')) == False:
         page_files = shelve.open('saves')
         page_files.close()
 
 def save_pages_in_data(saves_list):
-        if os.path.isfile('home/santiago/Documentos/PuppyAdopter/saves.dat') == True:
+        if os.path.isfile(get_cwd('/saves.dat')) == True:
             page_files = shelve.open('saves')
             page_files['saves'] = saves_list
             page_files.close()
@@ -35,7 +39,7 @@ def get_random_url(web_object, web_object_number):
             url_variable = web_object[random_number].get('src')
             if not '.jpg' in str(url_variable):
                 continue
-            elif os.path.isfile('home/santiago/Documentos/PuppyAdopter/saves.dat') == True:
+            elif os.path.isfile(get_cwd('/saves.dat')) == True:
                 if str(url_variable) in open('saves.dat', encoding='Latin-1').read():
                     continue
             return url_variable
@@ -44,7 +48,7 @@ def get_random_url(web_object, web_object_number):
             print('Algo salió mal: reanundando búsqueda...')
             continue
 
-def look_images(pages_list, saves_list): #This is where the magic happens!!
+def look_images(pages_list, saves_list):
 
     for i in pages_list:
         res = requests.get(i)
