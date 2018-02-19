@@ -13,7 +13,7 @@ remember them the next time. This shouldn't take long and will be included soon.
 b) A poor, yet functioning menu is not hard to make. Simple string output and input to choose at the beginning to either start
 the program or go to configuration (configuration equals the a) point: the method to manipulate the pages list).
 
-c) A trial for formats that aren't .jpg or images. The new formats are yet to define; some minor and some considerable changes
-are to be done to the script to adapt it.
+c) A trial for formats that aren't .jpg or images. The new formats are yet to be defined; some minor and some considerable 
+changes are to be done to the script to adapt it.
 
-There more improvements in order, but this are those that are currently being made.
+There are more improvements in order, but this are those that are currently being made.
