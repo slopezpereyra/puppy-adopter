@@ -5,6 +5,16 @@
 
 import os, requests, bs4, random, shelve, shutil
 
+def get_cwd(appended_value): #The function solves the directory flaw of the script (see readme text); get's current directory and
+# allows to append a value (in case an specific file of the directory is wanted (line 21, 31 and 36 are examples)).
+# The appended_value must be a string; must begin with a "/" symbol (in Windows, "\\") an after contain the name of the
+# file of interest. Again: see examples.
+    
+    cwd = os.getcwd()
+    cwd = cwd + appended_value
+
+    return cwd
+
 def create_folder(): # Creates the folder the files will be downloaded to (and printes a cute, unnecessary message!).
     print('Comprobando pelusitas y pulguitas...')
     os.makedirs('Puppies', exist_ok=True)
@@ -21,12 +31,12 @@ def create_data_file(): #The "if os.path.isfile" etc. method isn't flawless: it 
 
 #This function creates a saves.dat file on the folder only if that file wasn't created before or existed already;
 
-    if os.path.isfile('home/santiago/Documentos/PuppyAdopter/saves.dat') == False:
+    if os.path.isfile(get_cwd('/saves.dat')) == False:
         page_files = shelve.open('saves')
         page_files.close()
 
 def save_pages_in_data(saves_list): #This function creates a key value "saves" holding the "saves_list" list, where the downloaded url will be stored, all in the saves.dat file.
-        if os.path.isfile('home/santiago/Documentos/PuppyAdopter/saves.dat') == True:
+        if os.path.isfile(get_cwd('/saves.dat')) == True:
             page_files = shelve.open('saves')
             page_files['saves'] = saves_list
             page_files.close()
@@ -40,7 +50,7 @@ def get_random_url(web_object, web_object_number): #This function gets an url an
             url_variable = web_object[random_number].get('src')
             if not '.jpg' in str(url_variable):
                 continue
-            elif os.path.isfile('home/santiago/Documentos/PuppyAdopter/saves.dat') == True:
+            elif os.path.isfile(get_cwd('/saves.dat')) == True:
                 if str(url_variable) in open('saves.dat', encoding='Latin-1').read():
                     continue
             return url_variable
