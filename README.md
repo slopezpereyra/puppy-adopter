@@ -30,6 +30,10 @@ to this, apart from adding to the pages list a higher amount of values (web site
 
 --- The first defined function of the script solved this issue ---
 
+# Automatic run:
+
+This program was not thinked as a manually lunched application. Instead, it should run automatically on a specified time (let's say, every three days at 3:00 a.m.), all by itself. That way, I would receive the first time 5 downloaded files. Now, let's imagine those files are movies (as will probably be in the future). I would have three days to watch those movies, by the time the program would download more for me to wach. And so I'd have a constant movie income!, all automatically. Of course the time between each download and the download hour will be customizable at any moment. This feature is not being developed for the moment; the rest of the issues must be solved first.
+
 # --- What do I want to achieve with PuppyAdopter? ----
 
 Nothing. It's a crappy program. It is a simple excercise on web scrapping and downloading stuff that will on the process make me look cute on the eyes of my girlfriend (oh, the secret reasons of our endeavours!). I will subsequently use my PuppyAdopter experiencie to achieve more honourable goals (?).
