@@ -83,7 +83,8 @@ def look_images(pages_list, saves_list): #This is where the magic happens!!
         download_image(image_url, response)
         print('¡Cachorrito adoptado!')
 
-def get_page(): #This method joins al the other methods together, apart from stating the web sites to scrap and get the images from.
+def get_page(): #This method joins al the other methods together, apart from stating the default web sites to scrap 
+# and get the images from.
 
     pages = ['https://pixabay.com/es/photos/puppy/',
     'https://www.petsworld.in/blog/cute-pictures-of-puppies-and-kittens-together.html',
