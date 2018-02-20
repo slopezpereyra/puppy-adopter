@@ -26,10 +26,8 @@ def download_image(url, request_response):
 
     return local_filename
 
-def create_data_file(): #The "if os.path.isfile" etc. method isn't flawless: it should hold as an argument
-#not an specific path, but another method that gets and returns the current working path (where PuppyAdopter.py is). Will work on it; shouldn't be hard.
-
-#This function creates a saves.dat file on the folder only if that file wasn't created before or existed already;
+def create_data_file(): #This function creates a "saves.dat" file on the folder only if that file wasn't created before 
+# or existed already.
 
     if os.path.isfile(get_cwd('/saves.dat')) == False:
         page_files = shelve.open('saves')
