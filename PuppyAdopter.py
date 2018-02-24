@@ -69,11 +69,11 @@ def get_random_url(web_object, web_object_number):
             random_number = random.randint(0, web_object_number)
             url_variable = web_object[random_number].get('src')
             if not '.jpg' in str(url_variable):
-                print("Debug Log: if not .jpg functioning.")
                 continue
             elif os.path.isfile(get_cwd('/saves.dat')) == True:
                 if str(url_variable) in open('saves.dat', encoding='Latin-1').read():
-                    print("Debug Log: saves.dat lecture occur.")
+                    print("Debug Log: saves.dat lecture occur.") # This debug log nevers get printed; this if statement
+                    # is never the case. Can't be a coincidence: something is wrong with it.
                     continue
             return url_variable
             break
