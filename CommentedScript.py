@@ -3,6 +3,9 @@
 # Commented Script - Unnecessary unless you didn't follow the raw, prettier script. Only the look_images function have 
 # some lines that wouldn't make any sense without a comment.
 
+# Please, do notice that every line of the program that's not in english is not relevant. It only shows distractive
+# or funny messages and can be perfectly ignored. That's why I didn't bother translating them.
+
 import os, requests, bs4, random, shelve, shutil
 
 def get_cwd(appended_value): #The function solves the directory flaw of the script (see readme text); get's current directory and
@@ -39,6 +42,44 @@ def save_pages_in_data(saves_list): #This function creates a key value "saves" h
             page_files['saves'] = saves_list
             page_files.close()
 
+def manipulate_pages_list(list): #Defines an input system that allows to append new pages into the pages list to scrap.
+    #One may say it has the issue that when the program is closed the appended pages are not stored and the pages list
+    #only keeps the predefined values. And one would be right to say so. Yet to be solved.
+    
+    answer = input('Do you wish to add links to scrap? Type "y" for yes, "n" for no.')
+    if answer == "y":
+        while True:
+            appended_link = input('Please, copy the links here. Type "f" to finish.')
+            if appended_link == "f":
+                break
+            list.append(appended_link)
+    elif answer != "n":
+        print('Please type a valid input next time.')
+        menu()
+
+def menu_and_configure_menu(list): #It defines a simple, text based menu that appears at the beginning. From it one may go
+    #to starting the downloading process, to configure the pages list (running the previous method) or to exit.
+    
+    answer = input('Welcome to PuppyAdopter! \n\n Enter "s" to start and "c" to configure the pages list. Type "e" to exit.')
+    if answer == "e":
+        sys.exit(0)
+    elif answer == "s":
+        print('Initialazing the program...')
+    elif answer == "c":
+        while True:
+            appended_link = input('\nPlease, copy the links you want to add to the list here. Type "f" to finish. Type "i" for better info.')
+            if appended_link == "f":
+                break
+            elif appended_link== "i":
+                print("\nIn order to add links for the program to download files from, make sure to copy the whole link of the web page you are interested in.")
+                print("\nTo print uncomplete links will may lead to crashes, bugs or unwanted results.")
+                continue
+            list.append(appended_link)
+    elif answer != "n":
+        print('Please type a valid input next time.')
+
+            
+            
 def get_random_url(web_object, web_object_number): #This function gets an url and chooses a random
 #object (an image) from it.
 
@@ -95,6 +136,8 @@ def get_page(): #This method joins al the other methods together, apart from sta
 
     alr_dow = [] #alr_dow stands for "already downloaded"; in this list, the downloaded url's will be appended (see line 62 of the look_images function).
 
+ 
+    menu_and_configure_menu(pages)
     create_folder()
     create_data_file()
     look_images(pages, alr_dow)
