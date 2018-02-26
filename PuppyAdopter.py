@@ -10,7 +10,7 @@ import os, requests, bs4, random, shutil, sys, json
 # Several optimization changes.
 
 # The use of global variables is not recommended. Nevertheless, the declaration of pages as a global 
-# makes everything easier, since it's currently accesed and changed by other scripts.
+# makes everything easier, since it's constantly accesed and changed by other scripts.
 # Its use was carefully thought. Af all variables, it is the only global.
 
 # PROBLEMSwhen the pages list appends the value not from the program but from the
