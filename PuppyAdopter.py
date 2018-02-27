@@ -2,10 +2,16 @@
 
 import os, requests, bs4, random, shutil, sys, json
 
-# Major changes submited: not more shutil module to handle data storing; now shutil only handles downloading.
+# Major changes submited: no more shutil module to handle data storing; now shutil only handles downloading.
 # Data storing is now managed partially by json module's methods, apart from regular reading and writing functions.
 # In order to preserve added web sites, the added urls are not directly appended to the pages list, but stored in 
 # a .txt file from which the pages list later gets its values.
+
+# (This actually creates a pseudo-permanent list. The pages list is modified in the program, then saved in the .txt file.
+# When the program is closed, the changes made to the list are lost; the list is reseted each time. But each time it runs, it
+# also loads the values stored on .txt. So actually the list is always reseted to default, and only
+# "remembered" through reading the values on the .txt file. The list is, but isn't, permanent.)
+
 # Also removed the long menu. Unnecessary.
 # Several optimization changes.
 
@@ -29,7 +35,7 @@ pages = ['https://pixabay.com/es/photos/puppy/',
     'https://pixabay.com/es/photos/?q=baby+cows&hp=&image_type=photo&order=popular&cat=',
     'https://www.boredpanda.com/cute-baby-animals/']
 
-# Preparatory (basic) definitions
+# Preparatory (basic) definitions #
 
 def get_cwd(appended_value):
     cwd = os.getcwd()
@@ -40,7 +46,7 @@ def get_cwd(appended_value):
 def create_folder():
     os.makedirs('Puppies', exist_ok=True)
 
-# Data storing definitions
+# Data storing definitions #
 
 def create_data_file():
     if os.path.isfile(get_cwd('/data.txt')) == False:
@@ -50,7 +56,7 @@ def save_pages_in_data(saves_list):
     with open('data.txt', 'a') as outfile:
         json.dump(saves_list, outfile, ensure_ascii=False)
 
-# List manipulation definitions
+# List manipulation definitions #
 
 def create_list_data():
 
@@ -86,7 +92,7 @@ def manipulate_pages_list():
     if user_appended == True:
         get_list_from_data()
 
-# Scraping  and downloading definitions
+# Scraping  and downloading definitions #
 
 def download_image(url, request_response):
     local_filename = url.split('/')[-1]
@@ -139,7 +145,7 @@ def look_images(pages_list, saves_list):
         saves_list.append(str(image_url))
         download_image(image_url, response)
         print('¡Cachorrito adoptado!')
-
+        
 def get_page():
 
     alr_dow = []
