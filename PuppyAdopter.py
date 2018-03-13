@@ -65,15 +65,14 @@ def create_list_data():
 
 def get_list_from_data():
 
-    if user_appended == True:
-        list_path = get_cwd('/listdata.txt')
+    list_path = get_cwd('/listdata.txt')
 
-        with open(list_path, 'r') as outfile:
-            lecture = outfile.read()
-            pages.append(lecture)
-            for i in pages:
-                i.replace('"', '')
-            print(pages)
+    with open(list_path, 'r') as outfile:
+        lecture = outfile.read()
+        pages.append(lecture)
+        for i in pages:
+            i.replace('"', '')
+        print(pages)
 
 def manipulate_pages_list():
 
