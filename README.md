@@ -1,26 +1,13 @@
 # PuppyAdopter
-A program that downloads images of puppies and other baby animals.
-
-
-# Puppy Adopter!
 
 --- What is it? ---
 
-PuppyAdopter matters because of its form and not of its content. It is essentially a program that scraps a list of web pages and downloads one picture, randomly selected, of each. The fact that it downloads pictures is incidental; since it was made to work as a structure, it only provides me the skeleton to later on build more complex, interesting programs, that download better -yet surely less cute- things than puppies and other baby animals.
+  PuppyAdopter is nothing more than a program that downloads images. Its name comes from previous versions -which are still public on this repository-, in which it downloaded only puppies' images from a predetermined web-sites list. Now PuppyAdopter works only through a web-sites list each users gives, which makes its downloads customizable: you could add web-sites holding images of landscapes, animals, philosophers, writers, cars or pretty much anything else, to download images from.  
+  
+  PuppyAdopter handles information smartly now; it does not download the same image twice and its listdata.txt is a very safe and comfortable way to handle user-given information and make the web-sites list subject of manipulation (which was done in previous versions, though not exactly flawlessly and in a quite uncomfortable way).
 
-# --- Where does it need to improve? --- 
-
-PuppyAdopter does things that I would like to prevent from happening in the future. Here are the things I need advise on:
-
-# Downloading unwanted images:
-
-PuppyAdopter counts how many web objects with the 'img' or 'src' tags exist in a web page and chooses randomly one to download. The problem is, of the hundred or fifty images that the web page holds, some are unwanted, such as calendars, logos, publicity, and so. Not puppies. You get the idea. I haven't figure out a filter that works completely propperly, though have some things in mind and ran some tests. This is still unresolved, and perhaps the only perfect solution would be machine learning.
-
-# The pages list:
-
-The fact that the program works with a given list of web sites is limiting. On the other hand, it would be quite a mess to have the program scrap the whole web looking for puppies, even
-with the propper filters. It would be much slower and vulnerable to bugs and unwanted results (such as downloading things that aren't puppies). This is half solved, and should not take any longer.
-
-# --- What do I want to achieve with PuppyAdopter? ----
-
-Nothing. It's a crappy program. It is a simple excercise on web scrapping and downloading stuff that will on the process make me look cute on the eyes of my girlfriend (oh, the secret reasons of our endeavours!). I will subsequently use my PuppyAdopter experiencie to achieve more honourable goals (?).
+  Its only inconvenient is its lack of artificial intelligence at the time of choosing a random image to download from a web-site. Among the hundred of pictures of, let's say, landscapes an X website holds, there might be a few not precisely desired: logos, advertisements or simply an undercover monster-truck photograph no landscapes lover would want. The program does not know how to distinguish them; if in the random selection the chance falls on the monster-truck, or the logo, or any other undesired image, the program will download it anyway.
+   
+   This problem can be solved through machine learning. This is something I plan to learn and apply to the program. But, as you may see if check how much time there's between each edition of this repository, I don't have the time I need to do so now, since I am learning other computer languages and studying... well, things not related to Python or machine learning.
+   
+   Apart from this issue, the program is now flawless.
