@@ -120,8 +120,8 @@ def get_page():
     alr_dow = [] #alr_dow stands for 'already downloaded'. This is part of the process of preventing an image being 
     # downloaded repeatedly.
 
-    for x in range(0, 1): # You could not add a range at all, but to download a lot this is good. Give a wider range
-        # to download more images.
+    for x in range(0, 1): # You could not add a range at all, but this is the best way to download a considerable amount of images.
+        # The wider the range, the more images you'll get.
         
         create_folder()
         create_data_file()
