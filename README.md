@@ -1,39 +1,13 @@
-# PuppyAdopter
-A program that downloads images of puppies and other baby animals.
 
-
-# Puppy Adopter!
 
 --- What is it? ---
 
-PuppyAdopter matters because of its form and not of its content. It is essentially a program that scraps a list of web pages and downloads one picture, randomly selected, of each. The fact that it downloads pictures is incidental; since it was made to work as a structure, it only provides me the skeleton to later on build more complex, interesting programs, that download better -yet surely less cute- things than puppies and other baby animals.
+PuppyAdopter is nothing more than a program that downloads images. Its name comes from previous versions -which are still public on this repository-, in which it downloaded only puppies' images from a predetermined web-sites list. Now PuppyAdopter works only through a web-sites list each users gives, which makes its downloads customizable: you could add web-sites holding images of landscapes, animals, philosophers, writers, cars or pretty much anything else, to download images from.
 
-# --- Where does it need to improve? --- 
+PuppyAdopter handles information smartly now; it does not download the same image twice and its listdata.txt is a very safe and comfortable way to handle user-given information and make the web-sites list subject of manipulation (which was done in previous versions, though not exactly flawlessly and in a quite uncomfortable way).
 
-PuppyAdopter does things that I would like to prevent from happening in the future. Here are the things I need advise on:
+Its only inconvenient is its lack of artificial intelligence at the time of choosing a random image to download from a web-site. Among the hundred of pictures of, let's say, landscapes an X website holds, there might be a few not precisely desired: logos, advertisements or simply an undercover monster-truck photograph no landscapes lover would want. The program does not know how to distinguish them; if in the random selection the chance falls on the monster-truck, or the logo, or any other undesired image, the program will download it anyway.
 
-# Downloading unwanted images:
+This problem can be solved through machine learning. This is something I plan to learn and apply to the program. But, as you may see if check how much time there's between each edition of this repository, I don't have the time I need to do so now, since I am learning other computer languages and studying... well, things not related to Python or machine learning.
 
-PuppyAdopter counts how many web objects with the 'img' or 'src' tags exist in a web page and chooses randomly one to download. The problem is, of the hundred or fifty images that the web page holds, some are unwanted, such as calendars, logos, publicity, and so. Not puppies. You get the idea. I haven't figure out a filter that works completely propperly, though have some things in mind and ran some tests. This is still unresolved.
-
-# Ilegible data file:
-
-This is a matter of ignorance from my part. PuppyAdopter produces a data file and stores in it, under the key "saves", a list value containing the url's of the downloaded images. Theoretically this, that was done for the purpose of preventing downloading twice the same file, works, since if one prints the list as a debug test the values are okay, and the function that saves the list has any issue to my mortal, beginner eyes. But, when the data file is opened (it is a .dat file) everything is ilegible, and I'd think my list should be there and not those strange characters. This could be: a) the list is not saved propperly on the .dat file and instead crazy characters are holded for some reason; b) the list is stored propperly but the .dat file is not legible because of its format. So... is it that the format can't be read on Word/NotePad/others or rather a fault on the program?
-
-# The pages list:
-
-The fact that the program works with a given list of web sites is limiting. On the other hand, it would be quite a mess to have the program scrap the whole web looking for puppies, even
-with the propper filters. It would be much slower and vulnerable to bugs and unwanted results (such as downloading things that aren't puppies). Is there a way to find a solution
-to this, apart from adding to the pages list a higher amount of values (web sites)?
-
-# The os directory [Solved]:
-
---- The first defined function of the script solved this issue ---
-
-# Automatic run:
-
-This program was not thinked as a manually launched application. Instead, it should run automatically on a specified time (let's say, every three days at 3:00 a.m.), all by itself. That way, I would receive, the first time it's launched, 5 downloaded files. Now, let's imagine those files are movies (as will probably be in the future). I would have three days to watch those movies, by the time the program would download more for me to wach. And so I'd have a constant movie income!, all automatically. Of course the time between each download and the download hour will be customizable for the user. This feature is not being developed for the moment; the rest of the issues must be solved first.
-
-# --- What do I want to achieve with PuppyAdopter? ----
-
-Nothing. It's a crappy program. It is a simple excercise on web scrapping and downloading stuff that will on the process make me look cute on the eyes of my girlfriend (oh, the secret reasons of our endeavours!). I will subsequently use my PuppyAdopter experiencie to achieve more honourable goals (?).
+Apart from this issue, the program is now flawless.
