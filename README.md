@@ -2,7 +2,7 @@
 
 --- What is it? ---
 
-PuppyAdopter is nothing more than a program that downloads images. Its name comes from previous versions -which are still public on this repository-, in which it downloaded only puppies' images from a predetermined web-sites list. Now PuppyAdopter works only through a web-sites list each users gives, which makes its downloads customizable: you could add web-sites holding images of landscapes, animals, philosophers, writers, cars or pretty much anything else, to download images from.
+PuppyAdopter is nothing more than a program that downloads images. Its name comes from previous versions -which are still public on this repository-, in which it downloaded only puppies' images from a predetermined web-sites list. Now PuppyAdopter works through a web-sites list each users gives, containing of course whatever type of images, which makes its downloads customizable: you could add web-sites holding images of landscapes, animals, philosophers, writers, cars or pretty much anything else, to download images from.
 
 PuppyAdopter handles information smartly now; it does not download the same image twice and its listdata.txt is a very safe and comfortable way to handle user-given information and make the web-sites list subject of manipulation (which was done in previous versions, though not exactly flawlessly and in a quite uncomfortable way).
 
