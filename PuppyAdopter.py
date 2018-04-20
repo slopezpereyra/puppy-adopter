@@ -1,43 +1,136 @@
 #! /usr/bin/python3
 
-""" This program scraps a user-given list of webpages to download images from. """
+"""This program downloads images from a user-given list of websites."""
 
-import os, requests, bs4, random, shutil, json
+import json
+import os
+import pickle
+import random
+import shutil
 
-def get_cwd(appended_value):
-    """Return the directory formed by the join of the working directory
-    plus an appended value. Not a big deal, but makes things easier."""
+import bs4
+import requests
 
-    cwd = os.getcwd()
-    cwd = cwd + appended_value
 
-    return cwd
+class EnvironmentSetup:
 
-def save_pages_in_data(saves_list):
+    """Creates the basic folders and files an environment will manage data on.
+    An environment is simply a place in your system in which, and with which
+    elements, a program operates. You can have many environments for this program:
+    W'riters' may be dedicated to downloading writers' pictures; Puppies,
+    puppies' pictures, and so."""
 
-    """Saves the downloaded images into the data file. The downloaded images
-    are a list of strings."""
+    def __init__(self):
+        self.env_folder = self.create_environment_folder()
+        self.image_folder = self.create_image_folder()
+        self.data = self.create_data_file()
+        self.list_data = self.create_list_data()
 
-    with open('data.txt', 'a') as outfile:
-        json.dump(saves_list, outfile, ensure_ascii=False)
+    # CWD function definition.
 
-# List manipulation definitions
+    @staticmethod
+    def get_cwd(appended_value):
+        """Returns the current working directory with the chance of adding
+        an aditional direction. Not a big deal, but makes things easier."""
+        cwd = os.getcwd()
+        cwd += appended_value
+        return cwd
 
-def get_list_from_data():
+    # Environment setting definitions
 
-    """Reads the websites stored on listdata.txt to tell the program where
-    to look and download from."""
+    def create_environment_folder(self):
+        """Creates an environment folder"""
+        name = 'Environment'
 
-    list_path = get_cwd('/listdata.txt')
+        if os.path.isdir(self.get_cwd("/" + name)) is False:
+            os.makedirs(self.get_cwd('/' + name), exist_ok=True)
 
-    with open(list_path, 'r') as outfile:
-        lecture = outfile.readlines()
-        return lecture
+        return self.get_cwd('/' + name)
 
-# Scraping  and downloading definitions
+    def create_image_folder(self):
+        """Creates a folder to store the images into."""
+        name = input("Name your images destination folder.")
+        if name == '':
+            name = 'Images'
+
+        if os.path.isdir(self.get_cwd("/" + name)) is False:
+            os.makedirs(self.get_cwd('/' + name), exist_ok=True)
+
+        return self.get_cwd('/' + name)
+
+    def create_data_file(self):
+        """Creates the file that will keep track of the downloaded images
+        and prevent them to be downloaded twice."""
+        name = input("""Name your data file.""")
+        if name == '':
+            name = 'Data'
+
+        if os.path.isfile(self.get_cwd(name)) is False:
+            os.mknod(name + '.txt')
+
+        return self.get_cwd('/' + name + '.txt')
+
+    def create_list_data(self):
+        """Creates the list data file, where the user is supposed to add,
+        one per line, the link of the websites he wants to download images
+        from."""
+        name = input("Name of your websites list.")
+        if name == '':
+            name = 'Websites List'
+
+        if os.path.isfile(self.get_cwd('/' + name)) is False:
+            os.mknod(name + '.txt')
+
+        return self.get_cwd('/' + name + '.txt')
+
+
+class DataManager:
+    """The DataManager class works with an Environment class' instance.
+    It manages the information by returning it when requested, while also
+    storing the program's data on the data file precissed."""
+
+    def __init__(self, environment):
+        self.this_environment = environment
+
+    def return_env_dir(self):
+        """Getter method for the environment folder of this     environment."""
+        return self.this_environment.env_folder
+
+    def return_images_dir(self):
+        """Getter method for the images folder of this environment."""
+        return self.this_environment.image_folder
+
+    def return_data_file(self):
+        """Getter method for the data file of this environment."""
+        return self.this_environment.data
+
+    def return_list_data(self):
+        """Getter method for the list file of this environment."""
+        return self.this_environment.list_data
+
+    def save_pages_in_data(self, pages):
+        """Saves the downloaded images into the data file. The downloaded images
+        are a list of strings."""
+
+        with open(self.datafile, 'a') as data:
+            json.dump(pages, data, ensure_ascii=False)
+
+    def get_pages_list(self):
+        """Reads the websites stored on listdata.txt to tell the program where
+        to look and download from."""
+
+        with open(self.list, 'r') as pages:
+            return pages.readlines()
+
+    environment = property(return_env_dir)
+    folder = property(return_images_dir)
+    datafile = property(return_data_file)
+    list = property(return_list_data)
+
+### SINGLETON ###
+
 
 def download_image(url, request_response):
-
     """Downloads an image from a given request. It names it the same as the
     requested url and saves it into the Puppies folder.
 
@@ -45,11 +138,11 @@ def download_image(url, request_response):
     folder name stablished on the create_folder() function of setup.py """
 
     filename = url.split('/')[-1]
-    with open(os.path.join('NameYourImageFolder', filename), 'wb') as image:
+    with open(os.path.join(DATAMANAGER.folder, filename), 'wb') as image:
         shutil.copyfileobj(request_response.raw, image, [False])
 
-def get_random_url(web_object, web_object_number):
 
+def get_random_url(web_object, web_object_number):
     """Picks a random image from the the given website and retrieves its url.
     If it is a .jpg file, it returns the url after checking it wasn't
     downloaded before.
@@ -84,7 +177,6 @@ def get_random_url(web_object, web_object_number):
 
 
 def look_images(pages_list, saves_list):
-
     """Iterates over each element of a websites list.
     For each of them it requests its url, it parses it with bsoup,
     selects all the images found and counts how many are they.
@@ -122,8 +214,8 @@ def look_images(pages_list, saves_list):
         download_image(image_url, response)
         print('Image downloaded!')
 
-def get_page():
 
+def get_page():
     """Joins all methods together after retrieving the list of websites to
     scrap and creating an alr_dow list -which stands for already downloaded-,
     which would be later stored to keep a register of which images have
@@ -132,12 +224,25 @@ def get_page():
     You can make the for loop cycle as many times as you want, depending on
     how many images you want."""
 
-    pages = get_list_from_data()
+    pages = DATAMANAGER.get_pages_list()
     alr_dow = []
 
     for x in range(0, 1):
 
         look_images(pages, alr_dow)
-        save_pages_in_data(alr_dow)
+        DATAMANAGER.save_pages_in_data(alr_dow)
 
+
+if os.path.isdir(EnvironmentSetup.get_cwd('/Environment')) is False:
+    print('hi')
+    THIS = EnvironmentSetup()
+    DATAMANAGER = DataManager(THIS)
+    with open('env_pickle', 'wb') as f:
+        pickle.dump(THIS, f)
+else:
+    with open('env_pickle', 'rb') as f:
+        THIS = pickle.load(f)
+
+DATAMANAGER = DataManager(THIS)
 get_page()
+
