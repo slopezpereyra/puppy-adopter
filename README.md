@@ -3,15 +3,9 @@
 
 -- What is it? --
 
-A few branches back I wrote PuppyAdopter was nothing more than a program that downloaded images. Now I can say its something -a little bit something- more. Its name comes from those previous versions -which are still public on this repository-, in which it downloaded only puppies' images from a predetermined web-sites list. Now PuppyAdopter works through a web-sites list each user gives, containing of course whatever type of images, which makes its downloads customizable: you could add web-sites holding images of landscapes, animals, philosophers, writers, cars or pretty much anything else, to download images from.
+A few branches back I wrote PuppyAdopter was nothing more than a program that downloaded images. Now I can say its something -a little bit something- more. Its name comes from those previous versions -which are still public on this repository- in which it downloaded only puppies' images from a predetermined web-sites list. Now PuppyAdopter works through a web-sites list each user gives, containing of course whatever type of images, what results in a customizable download system. You could add web-sites holding images of landscapes, animals, philosophers, writers, cars or pretty much anything else, to download images from.
 
-PuppyAdopter handles information smartly now; it does not download the same image twice and its listdata.txt is a very safe and comfortable way to handle user-given information and make the web-sites list subject of manipulation (which was done in previous versions, though not exactly flawlessly and in a quite uncomfortable way).
-
-Its only inconvenient is its lack of artificial intelligence at the time of choosing a random image to download from a web-site. Among the hundred of pictures of, let's say, landscapes an X website holds, there might be a few not precisely desired: logos, advertisements or simply an undercover monster-truck photograph no landscapes lover would want. The program does not know how to distinguish them; if in the random selection the chance falls on the monster-truck, or the logo, or any other undesired image, the program will download it anyway.
-
-This problem can be solved through machine learning. This is something I plan to learn and apply to the program. But, as you may see if check how much time there's between each edition of this repository, I don't have the time I need to do so now, since I am learning other computer languages and studying... well, things not related to Python or machine learning.
-
-Apart from this issue, the program is now flawless.
+PuppyAdopter handles information smartly now; it does not download the same image twice and its data sytem is a very safe and comfortable way to handle user-given information and create a customized web-sites list.
 
 -- How does it work? --
 
@@ -40,9 +34,13 @@ Remember you can add as many websites as you like to your environments. Each env
 
 -- KNOWN BUGS --
 
-¡¡¡ PuppyAdopter runs, but does not download anything !!! 
+# PuppyAdopter runs, but does'nt download anything!
 
-  Check that you've actually provided your list file with links. Remember that's where PuppyAdopter gets directions! If you don't tell him where to go on your lists file, he'll go nowhere!
-  This can also be caused by the pressence of a link in your list file that requests captcha or displays adds and pop-ups. You can not download from such websites with this program.
+  Check that you've actually provided your list file (which you create when creating an environment) with links (see step 2 of instructions). Remember that's where PuppyAdopter gets directions! If you don't tell him where to go on your lists file, he'll go nowhere!
+  This can also be caused by the pressence of a link in your list file that takes to a website that requests captcha or displays adds and pop-ups. You can not download from such websites with this program.
 
+# PuppyAdopter downloads unwanted images
 
+The biggest inconvinienc of this program is its lack of artificial intelligence at the time of choosing a random image to download from a web-site. Among the hundred of pictures of, let's say, landscapes an X website holds, there might be a few not precisely desired: logos, advertisements or simply an undercover monster-truck photograph no landscapes lover would want. The program does not know how to distinguish them; if in the random selection the chance falls on the monster-truck, or the logo, or any other undesired image, the program will download it anyway.
+
+This problem can be solved through machine learning. This is something I plan to learn and apply to the program. But, as you may see if check how much time there's between each edition of this repository, I don't have the time I need to do so now, since I am learning other computer languages and studying... well, things not related to Python or machine learning.
