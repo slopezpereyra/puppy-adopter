@@ -20,6 +20,7 @@ PuppyAdopter downloads images from a websites list you provide to him on each en
 1 ) SET AN ENVIRONMENT
 
 1.1 Place the PuppyAdopter.py file on any folder you want. Name the folder whatever you want.
+
 1.2 Run PuppyAdopter.py. You'll be requested to name a folder, a data file and a list file. Do so.
 
 2 ) PROVIDE YOUR WEBSITES
