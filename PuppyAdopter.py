@@ -234,7 +234,6 @@ def get_page():
 
 
 if os.path.isdir(EnvironmentSetup.get_cwd('/Environment')) is False:
-    print('hi')
     THIS = EnvironmentSetup()
     DATAMANAGER = DataManager(THIS)
     with open('env_pickle', 'wb') as f:
