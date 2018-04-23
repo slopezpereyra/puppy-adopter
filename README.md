@@ -15,7 +15,7 @@ PuppyAdopter creates a decent working enviroment to download your images and man
 
 The great thing about it is that you can set as many enviroments as you want. You can place PuppyAdopter on a folder named Writers, execute it there and set an environment. Then you could do the same on a folder named Scientists. At last, you could tell PuppyAdopter to gather writers images on one environment, and scientists images on the other. You can have as many environments as you want!
 
-PuppyAdopter downloads images from a websites list you provide to him on each environment. To do so is simple: simply paste as many links as you like on your list file (however you named when the environment was setted), one link per line (that is important!). Once your list file has websites on it, if you run PuppyAdopter again, instead of creating an environment it will pass unto filling yours with images from the websites you provided. Beautiful!
+PuppyAdopter downloads images from a websites list you provide to him on each environment. To do so is simple: simply paste as many links as you like on your list file (however you named it when the environment was setted), one link per line (that is important!). Once your list file has websites on it, if you run PuppyAdopter again, instead of creating an environment it will pass unto filling yours with images from the websites you provided. Beautiful!
 
 # -- Instructions --
 
