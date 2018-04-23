@@ -38,7 +38,7 @@ Remember you can add as many websites as you like to your environments. Each env
 
 # -- KNOWN BUGS --
 
- - PuppyAdopter runs, but does'nt download anything!
+ - PuppyAdopter runs, but doesn't download anything!
 
   Check that you've actually provided your list file (which you create when creating an environment) with links (see step 2 of instructions). Remember that's where PuppyAdopter gets directions! If you don't tell him where to go on your lists file, he'll go nowhere!
   This can also be caused by the pressence of a link in your list file that takes to a website that requests captcha or displays adds and pop-ups. You can not download from such websites with this program.
