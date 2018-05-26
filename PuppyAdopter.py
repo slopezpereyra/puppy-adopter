@@ -10,8 +10,6 @@ import shutil
 import bs4
 import requests
 
-import Environmentor
-
 
 def download_image(url, request_response, env_data):
     """Downloads an image from a given request. It names it the same as the
@@ -106,7 +104,7 @@ def get_page():
             if os.path.isdir(datamanager.folder):  # In case the env folder was erased
                 pages = datamanager.get_pages_list()
                 alr_dow = []
-                for x in range(0, 1):
+                for X in range(0, 5):
                     look_images(pages, alr_dow, datamanager)
                     datamanager.save_pages_in_data(alr_dow)
                 print("Finished")
