@@ -40,7 +40,7 @@ Every environment has the following components:
 
 a) an images folder, where the downloaded images of this environment will be stored;
 b) a data file, which keeps track of the environment's data, and
-c) a websites' list file, which is a simply .txt file where we are to paste the
+c) a websites' list file, which is a simple .txt file where we are to paste the
 links of the websites we want our environment to download images from.
 
 The most important file of our environment is the websites' list file, since it
