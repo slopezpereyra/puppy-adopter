@@ -20,7 +20,7 @@ populated with different kinds of images! Writers, puppies, landscapes..., never
 as easy as today!
 
 Use the Environmentor to create new environments in a fast, inteligente way;
-supply your environment's with websites with a quick and super-simple method;
+supply your environments with websites with a quick and super-simple method;
 run PuppyAdopter and let him fill your environments with images.
 
 # -- Detailed instructions --
