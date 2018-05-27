@@ -1,17 +1,17 @@
 
-# Puppy Adopter*
+# Puppy Adopter
 
-Who doesn't love puppies?
+### Who doesn't love puppies?
 
-# -- What is it? --
+#  What is it?
 
-A super cool image downloader.
+_**A super cool image downloader.**_
 
 It has never been so easy to create, to manage, to furnish virtual galeries
 of images. Of pictures. Of beauty.
 
 
-# -- How does it work? --
+# How does it work?
 
 Set your environments and furnish them with images before an eyelid's blink!
 Each environment will be automatically filled with images from the websites
@@ -23,9 +23,9 @@ Use the Environmentor to create new environments in a fast, inteligente way;
 supply your environments with websites with a quick and super-simple method;
 run PuppyAdopter and let him fill your environments with images.
 
-# -- Detailed instructions --
+# Detailed instructions 
 
-## Environment Setting:
+### Environment Setting:
 
 The Environmentor manages our environments. With it we can create or erase
 environments. (The first time that you run Environmentor it will shut down after
@@ -60,30 +60,30 @@ erased and PuppyAdopter will no longer recognize the environments we created
 before the clearing-process. If you clear your environments, none of them
 will work anymore!
 
-Puppy-Adopting Process:
+### Puppy-Adopting Process:
 
 If all your environments were provided with websites on the way explained before,
 it's time to download! To do so, simple execute PuppyAdopter. It will automatically
 do the job for you. Once it's done, your environments should be furnished with
 images from their own websites, now downloaded to your computer!
 
-# -- Quick instructions --
+# Quick instructions
 
-1.1 Run Environmentor. It will shut down the first time; this is normal.
+**1.1** Run Environmentor. It will shut down the first time; this is normal.
 Run it again to create an environment; name the folders and files as
 you wish.
 
-1.2 On the step 1.1 you were prompted to name a websites' list: this created a file
+**1.2** On the step 1.1 you were prompted to name a websites' list: this created a file
 with that name. Find the file on your environment and paste in it the
 links of the websites you want this environment to download images from. Remember
 to paste one link per line!
 
-1.3 Repeat the process until you have as many environments as you want.
+**1.3** Repeat the process until you have as many environments as you want.
 
-2.1 Downloading time! Simply run PuppyAdopter and he will download images from
+**2.1** Downloading time! Simply run PuppyAdopter and he will download images from
 the right websites for each environment. Easy!
 
-#-- General Notes --
+# General Notes
 
 Always remember to add the websites in your websites' list file! Otherwise nothing
 will be downloaded.
