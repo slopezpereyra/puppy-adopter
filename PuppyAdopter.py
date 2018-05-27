@@ -7,11 +7,11 @@ import pickle
 import random
 import shutil
 
-import bs4
 import requests
+import bs4
 
 
-def download_image(url, request_response, env_data):
+def save_image(url, request_response, env_data):
     """Downloads an image from a given request. It names it the same as the
     requested url and saves it into the Puppies folder.
     The folder name in open(os.path.join(foldername)) etc. must be the same
@@ -22,7 +22,7 @@ def download_image(url, request_response, env_data):
         shutil.copyfileobj(request_response.raw, image, [False])
 
 
-def get_random_url(web_object, web_object_number, env_data):
+def get_random_image(web_object, web_object_number, env_data):
     """Picks a random image from the the given website and retrieves its url.
     If it is a .jpg file, it returns the url after checking it wasn't
     downloaded before.
@@ -41,7 +41,7 @@ def get_random_url(web_object, web_object_number, env_data):
             with open(env_data.datafile) as data:
                 lecture = data.read()
                 if str(url_variable) in lecture:
-                    print("Wasn't this image downloaded already...? Restarting...")
+                    print("Wasn't this image downloaded already? Restarting...")
                     continue
                 else:
                     return url_variable
@@ -55,7 +55,7 @@ def get_random_url(web_object, web_object_number, env_data):
                 return False
 
 
-def look_images(pages_list, saves_list, env_data):
+def look_for_images(pages_list, saves_list, env_data):
     """Iterates over each element of a websites list.
     For each of them it requests its url, it parses it with bsoup,
     selects all the images found and counts how many are they.
@@ -74,7 +74,7 @@ def look_images(pages_list, saves_list, env_data):
         soup_image = soup.select('img')
         image_count = len(soup_image)
 
-        image_url = get_random_url(soup_image, image_count, env_data)
+        image_url = get_random_image(soup_image, image_count, env_data)
         if image_url is False:
             continue
         print("\n Images found...")
@@ -87,25 +87,27 @@ def look_images(pages_list, saves_list, env_data):
         response = requests.get(image_url, stream=True)
         response.raise_for_status()
         saves_list.append(str(image_url))
-        download_image(image_url, response, env_data)
+        save_image(image_url, response, env_data)
         print('Image downloaded!')
 
 
-def get_page():
-    """Joins all methods together after retrieving the list of websites to
-    scrap and creating an alr_dow list -which stands for already downloaded-,
-    which would be later stored to keep a register of which images have
-    been downloaded already.
-    You can make the for loop cycle as many times as you want, depending on
-    how many images you want."""
+def download_images():
+    """ This is the main function.
+    Loops over all existing environments and downloads images on them
+    from the web sites of the environment in question. Keeps track of the
+    downloaded files and stores them on the environment's data through the
+    alr_dow list -which stands for 'already downloaded'-, keeping a register
+    of which images have been downloaded already.
+    data, and which registers what images have been downloaded already."""
+
     with open("environmentor_data", "rb") as f:
         for datamanager in pickle.load(f):
             print(datamanager.environment)
-            if os.path.isdir(datamanager.folder):  # In case the env folder was erased
+            if os.path.isdir(datamanager.folder):  # If folder wasn't erased...
                 pages = datamanager.get_pages_list()
                 alr_dow = []
                 for X in range(0, 5):
-                    look_images(pages, alr_dow, datamanager)
+                    look_for_images(pages, alr_dow, datamanager)
                     datamanager.save_pages_in_data(alr_dow)
                 print("Finished")
             else:
@@ -113,4 +115,4 @@ def get_page():
                 continue
 
 
-get_page()
+download_images()
