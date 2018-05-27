@@ -27,8 +27,8 @@ run PuppyAdopter and let him fill your environments with images.
 
 ### Environment Setting:
 
-The Environmentor manages our environments. With it we can create or erase
-environments. (The first time that you run Environmentor it will shut down after
+The **Environmentor** _manages our _environments_. With it we can create or erase
+environments. (The first time that you run **Environmentor** it will shut down after
 apparently doing nothing. This is normal; it is doing useful things. After
 this first time, it'll have regular behaviour.)
 
