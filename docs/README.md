@@ -22,14 +22,16 @@ many environments as you wish. The sky is the limit!
 
 # Detailed instructions 
 
-### Environment Setting:
+#### Environment Setting:
 
-The **Environmentor** _manages our _environments_. With it we can create or erase
+The **Environmentor** _manages our environments_. With it we can create or erase
 environments. (The first time that you run **Environmentor** it will shut down after
 apparently doing nothing. This is normal; it is doing useful things. After
 this first time, it'll have regular behaviour.)
 
-If we choose to create an environment, we will be prompted to name its folders
+###### Creating an environment
+
+If we choose to create an environment, we will be prompt to name its folders
 and files. We can choose not to name them by simply typing anyting, which will
 provide the files and folders with their default names.
 
@@ -40,24 +42,23 @@ b) a data file, which keeps track of the environment's data, and
 c) a websites' list file, which is a simple .txt file where we are to paste the
 links of the websites we want our environment to download images from.
 
-The most important file of our environment is the websites' list file, since it
-is the one from which PuppyAdopter will retrieve the direction of the websites
-he is to download images from. If this file is empty, no images will be
-downloaded.
-
-IMPORTANT: it is importante that we paste the links on the websites' list one
-per line!
+You are to provide the websites' list with links to the websites you'd like
+this environment to download images from. If this file is empty, no images will be
+downloaded. _It is important that we paste the links on the websites' list one
+per line!_
 
 Once we have created our environment with Environmentor and provided its
 website's list file with links, we can say our environment is settled! Now
 it's time to adopt some puppies! Or download our images, rather...
 
-If we choose to clear our environments, all our environments data will be
+###### Cleaning our data
+
+If we choose to clear our environments, all our environments' data will be
 erased and PuppyAdopter will no longer recognize the environments we created
 before the clearing-process. If you clear your environments, none of them
-will work anymore!
+will work anymore.
 
-### Puppy-Adopting Process:
+#### Puppy-Adopting Process:
 
 If all your environments were provided with websites on the way explained before,
 it's time to download! To do so, simple execute PuppyAdopter. It will automatically
@@ -66,7 +67,7 @@ images from their own websites, now downloaded to your computer!
 
 # Quick instructions
 
-**1.1** Run Environmentor. It will shut down the first time; this is normal.
+**1.1** Run **Environmentor**. It will shut down the first time; this is normal.
 Run it again to create an environment; name the folders and files as
 you wish.
 
@@ -87,3 +88,8 @@ will be downloaded.
 
 Remember you can add as many websites as you like to your environments; the
 more websites, the more images!
+
+Do not provide your environment's websites' list with links of websites that
+request captcha or other types of control, and neither of websites that display
+pop-ups when opened. PuppyAdopter does not know how to close pop-ups nor how
+to pass an AI control. Keep it simple!
