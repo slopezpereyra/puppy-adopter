@@ -3,7 +3,7 @@
 
 ### Who doesn't love puppies?
 
-#  What is it?
+##  What is it?
 
 _**A super cool image downloader.**_
 
@@ -11,7 +11,7 @@ It has never been so easy to create, to manage, to furnish virtual galeries
 of images. Of pictures. Of beauty.
 
 
-# How does it work?
+## How does it work?
 
 An amazing environment system allows you to create and manage multiple galeries
 in a simple, efficient way, and furnish them with infinite pictures before an
@@ -20,7 +20,7 @@ each of them have; run PuppyAdopter and each environment will download images fr
 their websites. Feed your environments with as many websitse as you want; create as
 many environments as you wish. The sky is the limit!
 
-# Detailed instructions 
+## Detailed instructions 
 
 #### Environment Setting:
 
@@ -65,7 +65,7 @@ it's time to download! To do so, simple execute PuppyAdopter. It will automatica
 do the job for you. Once it's done, your environments should be furnished with
 images from their own websites, now downloaded to your computer!
 
-# Quick instructions
+## Quick instructions
 
 **1.1** Run **Environmentor**. It will shut down the first time; this is normal.
 Run it again to create an environment; name the folders and files as
@@ -81,7 +81,7 @@ to paste one link per line!
 **2.1** Downloading time! Simply run PuppyAdopter and he will download images from
 the right websites for each environment. Easy!
 
-# General Notes
+## General Notes
 
 Always remember to add the websites in your websites' list file! Otherwise nothing
 will be downloaded.
