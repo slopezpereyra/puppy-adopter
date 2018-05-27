@@ -6,7 +6,7 @@ Who doesn't love puppies?
 # -- What is it? --
 
 It has never been so easy to create, to manage, to furnish virtual galeries
-of images. of pictures, of beauty.
+of images. Of pictures. Of beauty.
 
 
 # -- How does it work? --
