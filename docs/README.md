@@ -67,7 +67,7 @@ it's time to download! To do so, simple execute PuppyAdopter. It will automatica
 do the job for you. Once it's done, your environments should be furnished with
 images from their own websites, now downloaded to your computer!
 
-#-- Quick instructions --
+# -- Quick instructions --
 
 1.1 Run Environmentor. It will shut down the first time; this is normal.
 Run it again to create an environment; name the folders and files as
