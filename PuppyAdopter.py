@@ -10,7 +10,6 @@ import shutil
 import requests
 import bs4
 
-
 def save_image(url, request_response, env_data):
     """Downloads an image from a given request. It names it the same as the
     requested url and saves it into the Puppies folder.
@@ -70,8 +69,7 @@ def look_for_images(pages_list, saves_list, env_data):
     for i in pages_list:
         res = requests.get(i)
         res.raise_for_status()
-        soup = bs4.BeautifulSoup(res.text, "html.parser")
-        soup_image = soup.select('img')
+        soup_image = bs4.BeautifulSoup(res.text, "html.parser").select('img')
         image_count = len(soup_image)
 
         image_url = get_random_image(soup_image, image_count, env_data)
@@ -102,7 +100,7 @@ def download_images():
 
     with open("environmentor_data", "rb") as f:
         for datamanager in pickle.load(f):
-            print(datamanager.environment)
+            print("Downloading to " + datamanager.environment)
             if os.path.isdir(datamanager.folder):  # If folder wasn't erased...
                 pages = datamanager.get_pages_list()
                 alr_dow = []
@@ -111,7 +109,8 @@ def download_images():
                     datamanager.save_pages_in_data(alr_dow)
                 print("Finished")
             else:
-                print("continuing")
+                print("""ERROR: download attempt on unexisting environment; moving
+                to the following.""")
                 continue
 
 

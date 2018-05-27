@@ -7,6 +7,8 @@ import pickle
 
 from lib import datamanager, envsetup
 
+#TODO: Create a specific cleaning function that cleans only one environment
+
 if os.path.isfile(envsetup.EnvironmentSetup.get_cwd("/environmentor_data")) is False:
     ENV_DATA = []
     with open("environmentor_data", "wb") as f:
