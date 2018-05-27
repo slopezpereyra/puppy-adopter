@@ -13,15 +13,12 @@ of images. Of pictures. Of beauty.
 
 # How does it work?
 
-Set your environments and furnish them with images before an eyelid's blink!
-Each environment will be automatically filled with images from the websites
-you provide to it. Multiple envrionments with different websites will be
-populated with different kinds of images! Writers, puppies, landscapes..., never
-as easy as today!
-
-Use the Environmentor to create new environments in a fast, inteligente way;
-supply your environments with websites with a quick and super-simple method;
-run PuppyAdopter and let him fill your environments with images.
+An amazing environment system allows you to create and manage multiple galeries
+in a simple, efficient way, and furnish them with infinite pictures before an
+eyelid's blink! Feed your environments with websites' links on the websites' file
+each of them have; run PuppyAdopter and each environment will download images from
+their websites. Feed your environments with as many websitse as you want; create as
+many environments as you wish. The sky is the limit!
 
 # Detailed instructions 
 
