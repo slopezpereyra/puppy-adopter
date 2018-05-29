@@ -61,6 +61,7 @@ def create_environmentor_data(env_data):
 
     if os.path.isfile(EnvironmentSetup.get_cwd("/environmentor_data")) is False:
         with open("environmentor_data", "wb") as pickle_env_data:
+            pickle.dump(env_data, pickle_env_data)
 
 
 def environmentor_data_sort():
@@ -72,7 +73,9 @@ def environmentor_data_sort():
             env_data = pickle.load(pickle_env_data)
             print("it exists")
             return env_data
-    except (FileNotFoundError, EOFError):
+    except FileNotFoundError:   # If EOFError is added as exception, the error
+                                # is masked but is not solved. Result: new env
+                                # data created on each run.
         print("Creating data")
         env_data = []
         create_environmentor_data(env_data)
