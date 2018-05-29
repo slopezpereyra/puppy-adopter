@@ -10,6 +10,7 @@ import shutil
 import requests
 import bs4
 
+
 def save_image(url, request_response, env_data):
     """Downloads an image from a given request. It names it the same as the
     requested url and saves it into the Puppies folder.
@@ -104,7 +105,7 @@ def download_images():
             if os.path.isdir(datamanager.folder):  # If folder wasn't erased...
                 pages = datamanager.get_pages_list()
                 alr_dow = []
-                for X in range(0, 5):
+                for value in range(0, 5):
                     look_for_images(pages, alr_dow, datamanager)
                     datamanager.save_pages_in_data(alr_dow)
                 print("Finished")
