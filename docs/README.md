@@ -25,64 +25,49 @@ many environments as you wish. The sky is the limit!
 
 ## Detailed instructions
 
-#### Environment Setting:
+#### Managing our environments:
 
-The **Environmentor** _manages our environments_. With it we can create or erase
-environments. (The first time that you run **Environmentor** it will shut down after
-apparently doing nothing. This is normal; it's acomplishing a useful task. After
-this first time, it'll have regular behaviour.)
+You can think of an environment as a galery. It's a place where to download
+images from a list of websites you provide. Each environment is independent
+from the others, and has its own list of websites.
+
+**Environmentor** _manages our environments_. With it we can create or erase
+them.
 
 ###### Creating an environment
 
-If we choose to create an environment, we will be prompt to name its folders
-and files. We can choose not to name them by typing anyting, which will
-provide the files and folders with their default names.
+Run **Envionmentor**. You'll be prompted to erase one or all environments
+or create one. Choose to last option; name the files of your environment when
+requested to.
 
-Every environment has the following components:
+Among your environment there is a **websites list** file, which you named
+when creating your environment. One per line, paste in the file the links
+of the websites this environment will download images from.
 
-a) an images folder, where the downloaded images of this environment will be stored;
-b) a data file, which keeps track of the environment's data, and
-c) a websites' list file, which is a simple .txt file where we are to paste the
-links of the websites we want our environment to download images from.
+Once your environment was created and you provided its **sebsites list** file
+with links, we can say your environment is settled.
 
-You are to provide the websites' list with links to the websites you'd like
-this environment to download images from. If this file is empty, no images will be
-downloaded. _It is important that we paste the links on the websites' list one
-per line!_
+###### Erasing all environments
 
-Once we have created our environment with Environmentor and provided its
-website's list file with links, we can say our environment is settled! Now
-it's time to adopt some puppies! Or download our images, rather...
+When we run **Environmentor** we can also choose to erase all of our environments.
+This resets the program to a new-born state: all files, folders and data is
+erased permanently. Use it carefully and wiselly.
 
-###### Cleaning our data
+###### Erasing an environment
 
-If we choose to clear our environments, all our environments' data will be
-erased and PuppyAdopter will no longer recognize the environments we created
-before the clearing-process. If you clear your environments, none of them
-will work anymore.
+**Environmentor** offers us to erase a single environment too. When an environment
+is erased, all its files, folders and data are erased permamently.
+
+When this opion is chosen, a list of your environments will be displayed, each
+with an index number next to it. Enter the index number of the environment
+you wish to erase.
 
 #### Puppy-Adopting Process:
 
 If all your environments were provided with websites on the way explained before,
-it's time to download! To do so, simple execute PuppyAdopter. It will automatically
+it's time to feed them! To do so, simple execute PuppyAdopter. It will automatically
 do the job for you. Once it's done, your environments should be furnished with
-images from their own websites, now downloaded to your computer!
-
-## Quick instructions
-
-**1.1** Run **Environmentor**. It will shut down the first time; this is normal.
-Run it again to create an environment; name the folders and files as
-you wish.
-
-**1.2** On the step 1.1 you were prompted to name a websites' list: this created a file
-with that name. Find the file on your environment and paste in it the
-links of the websites you want this environment to download images from. Remember
-to paste one link per line!
-
-**1.3** Repeat the process until you have as many environments as you want.
-
-**2.1** Downloading time! Run PuppyAdopter and he will download images from
-the right websites for each environment. Easy!
+images downloaded from the websites you provided to them into to your computer.
 
 ## General Notes
 
@@ -91,6 +76,11 @@ will be downloaded.
 
 Remember you can add as many websites as you like to your environments; the
 more websites, the more images!
+
+If you erase an environment's folder, this doesn't prevent PuppyAdopter from
+considering this environment still exists. The reason is that this environment's
+data wasn't properly erased. To properly erase an environment, do not simply delete
+its folder: use **Environmentor** to do it.
 
 Do not provide your environment's websites' list with links of websites that
 request captcha or other types of control, and neither of websites that display
