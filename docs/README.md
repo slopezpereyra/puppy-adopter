@@ -25,7 +25,7 @@ many environments as you wish. The sky is the limit!
 
 ## Detailed instructions
 
-#### Managing our environments:
+### Managing our environments:
 
 You can think of an environment as a galery. It's a place where to download
 images from a list of websites you provide. Each environment is independent
@@ -62,7 +62,7 @@ When this opion is chosen, a list of your environments will be displayed, each
 with an index number next to it. Enter the index number of the environment
 you wish to erase.
 
-#### Puppy-Adopting Process:
+### Puppy-Adopting Process:
 
 If all your environments were provided with websites on the way explained before,
 it's time to feed them! To do so, simple execute PuppyAdopter. It will automatically
@@ -71,18 +71,18 @@ images downloaded from the websites you provided to them into to your computer.
 
 ## General Notes
 
-Always remember to add the websites in your websites' list file! Otherwise nothing
+**Always** remember to add the websites in your websites' list file! Otherwise nothing
 will be downloaded.
 
-Remember you can add as many websites as you like to your environments; the
+**Remember** you can add as many websites as you like to your environments; the
 more websites, the more images!
 
-If you erase an environment's folder, this doesn't prevent PuppyAdopter from
+**If you erase** an environment's folder, this doesn't prevent PuppyAdopter from
 considering this environment still exists. The reason is that this environment's
 data wasn't properly erased. To properly erase an environment, do not simply delete
 its folder: use **Environmentor** to do it.
 
-Do not provide your environment's websites' list with links of websites that
+**Do not** provide your environment's websites' list with links of websites that
 request captcha or other types of control, and neither of websites that display
 pop-ups when opened. PuppyAdopter does not know how to close pop-ups nor how
 to pass an AI control. Keep it simple!
