@@ -17,7 +17,7 @@ An environment system allows you to create and manage multiple galeries
 in a simple, efficient way, and furnish them with infinite pictures before an
 eyelid's blink.
 
-Feed your environments with websites' links on their websites' file; run
+Feed your environments with websites' links on their websites file; run
 PuppyAdopter and each environment will download images from their websites.
 
 Feed your environments with as many websitse as you want; create as
