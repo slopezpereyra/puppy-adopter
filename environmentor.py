@@ -45,7 +45,7 @@ def clear_environment_data(env_data):
 
 
 def create_environment(env_data):
-    """Creates an environment and commuinacates of its creation to the
+    """Creates an environment and communicates of its creation to the
     environmentor_data file."""
 
     with open("environmentor_data", "wb") as pickle_env_data:
@@ -53,6 +53,8 @@ def create_environment(env_data):
         datamng = DataManager(environment)
         env_data.append(datamng)
         pickle.dump(env_data, pickle_env_data)
+
+        print("\nEnvironment succesfully created.")
 
 
 def create_environmentor_data(env_data):

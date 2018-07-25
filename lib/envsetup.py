@@ -12,26 +12,29 @@ class EnvironmentSetup:
     pictures; "Puppies",puppies pictures, and so."""
 
     def __init__(self):
+
         self.env_folder = self.create_environment_folder()
         self.image_folder = self.create_image_folder()
         self.data = self.create_data_file()
         self.list_data = self.create_list_data()
 
-  # CWD function definition.
+        # CWD function definition.
 
     @staticmethod
     def get_cwd(appended_value):
         """Returns the current working directory with the chance of adding
         an aditional direction. Not a big deal, but makes things easier."""
+
         cwd = os.getcwd()
         cwd += appended_value
         return cwd
 
-      # Environment setting definitions
+        # Environment setting definitions
 
     def create_environment_folder(self):
         """Creates an environment folder"""
-        name = input("Name this environment")
+
+        name = input("Name this environment: ")
 
         if os.path.isdir(self.get_cwd("/" + name)) is False:
             os.makedirs(self.get_cwd('/' + name), exist_ok=True)
@@ -43,7 +46,8 @@ class EnvironmentSetup:
 
     def create_image_folder(self):
         """Creates a folder to store the images into."""
-        name = input("Name your images destination folder.")
+
+        name = input("Name your images destination folder: ")
         if name == '':
             name = 'Images'
 
@@ -55,9 +59,11 @@ class EnvironmentSetup:
     def create_data_file(self):
         """Creates the file that will keep track of the downloaded images
         and prevent them to be downloaded twice."""
-        name = input("""Name your data file.""")
+
+        name = input("""Name your data file: """)
+
         if name == '':
-            name = 'Data'
+            name = 'env_data'
 
         if os.path.isfile(self.env_folder + "/" + name) is False:
             os.mknod(self.env_folder + "/" + name + ".txt")
@@ -68,9 +74,11 @@ class EnvironmentSetup:
         """Creates the list data file, where the user is supposed to add,
         one per line, the link of the websites he wants to download images
         from."""
-        name = input("Name of your websites list.")
+
+        name = input("Name of your websites list: ")
+
         if name == '':
-            name = 'Websites List'
+            name = 'websites_list'
 
         if os.path.isfile(self.get_cwd(self.env_folder + "/" + name)) is False:
             os.mknod(self.env_folder + "/" + name + '.txt')

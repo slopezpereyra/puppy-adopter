@@ -91,13 +91,12 @@ def look_for_images(pages_list, saves_list, env_data):
 
 
 def download_images():
-    """ This is the main function.
-    Loops over all existing environments and downloads images on them
-    from the web sites of the environment in question. Keeps track of the
-    downloaded files and stores them on the environment's data through the
-    alr_dow list -which stands for 'already downloaded'-, keeping a register
-    of which images have been downloaded already.
-    data, and which registers what images have been downloaded already."""
+    """ Main function.
+    Loops over all existing environments and downloads, on each, images from 
+    their respective websites. Keeps track of the downloaded files and stores
+    them on the environment's data through the alr_dow list -which stands for
+    'already downloaded'-, keeping a register of which images have been
+    downloaded already."""
 
     with open("environmentor_data", "rb") as f:
         for datamanager in pickle.load(f):
