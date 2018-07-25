@@ -8,6 +8,7 @@ import shutil
 
 from lib.envsetup import EnvironmentSetup
 from lib.datamanager import DataManager
+from lib.exceptions import NoEnvironmentFound
 
 
 def clear_all_data(env_data):
@@ -15,8 +16,10 @@ def clear_all_data(env_data):
     to a new-born stage, as if no environment was ever created."""
 
     with open("environmentor_data", "wb") as pickle_env_data:
+
         for data in env_data:
             shutil.rmtree(data.environment)
+
         env_data.clear()
         pickle.dump(env_data, pickle_env_data)
 
@@ -25,21 +28,29 @@ def clear_environment_data(env_data):
     """Clears all data from a specific environment."""
 
     if len(env_data) <= 0:
-        print("There are no environments settled in here!")
-        return
+
+        raise NoEnvironmentFound()
+
     with open("environmentor_data", "wb") as pickle_env_data:
+
         counter = 0
         print("Existing environments:")
+
         for data in env_data:
             print(str(counter), ": ", data.environment)
             counter += 1
+
         action = input("""Type the index number of the environment you want
         to erase""")
+
         try:
+
             shutil.rmtree(env_data[int(action)].environment)
             del env_data[int(action)]
             pickle.dump(env_data, pickle_env_data)
+
         except (ValueError, IndexError):
+
             print("No valid value was introduced.")
             pickle_env_data.close()
 
@@ -49,8 +60,10 @@ def create_environment(env_data):
     environmentor_data file."""
 
     with open("environmentor_data", "wb") as pickle_env_data:
+
         environment = EnvironmentSetup()
         datamng = DataManager(environment)
+
         env_data.append(datamng)
         pickle.dump(env_data, pickle_env_data)
 
@@ -63,6 +76,7 @@ def create_environmentor_data(env_data):
 
     if os.path.isfile(EnvironmentSetup.get_cwd("/environmentor_data")) is False:
         with open("environmentor_data", "wb") as pickle_env_data:
+
             pickle.dump(env_data, pickle_env_data)
 
 
@@ -71,10 +85,13 @@ def environmentor_data_sort():
     is created firstly if it doesn't exist."""
 
     try:
+
         with open("environmentor_data", "rb") as pickle_env_data:
+
             env_data = pickle.load(pickle_env_data)
             print("it exists")
             return env_data
+
     except FileNotFoundError:   # If EOFError is added as exception, the error
                                 # is masked but is not solved. Result: new env
                                 # data created on each run.
@@ -93,15 +110,20 @@ def environmentor():
     env_data = environmentor_data_sort()
     action = input("""Press n to create new environment; s to erase an environment
     and c to erase all environments.""")
+
     if action == "n":
         create_environment(env_data)
+
     elif action == "c":
         action = input("""Are you sure? This will erase all of your environments
         and their data permanently! y/n""")
+
         if action == "y":
             clear_all_data(env_data)
+
         elif action == "n":
             environmentor()
+
     elif action == "s":
         clear_environment_data(env_data)
 

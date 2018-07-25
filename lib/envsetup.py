@@ -27,6 +27,7 @@ class EnvironmentSetup:
 
         cwd = os.getcwd()
         cwd += appended_value
+
         return cwd
 
         # Environment setting definitions
@@ -48,6 +49,7 @@ class EnvironmentSetup:
         """Creates a folder to store the images into."""
 
         name = input("Name your images destination folder: ")
+
         if name == '':
             name = 'Images'
 
